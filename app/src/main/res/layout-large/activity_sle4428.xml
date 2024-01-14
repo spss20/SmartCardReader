@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    android:fitsSystemWindows="true">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/sle4428toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_tool_bar">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/title_style_xhdpi"
+            android:layout_width="wrap_content"
+            android:text="@string/title_activity_sle4428_" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/sle4428openLayout"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_below="@+id/sle4428toolbar"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/SLE4428buttonOpen"
+            style="@style/button_style_narrow_large"
+            android:layout_marginLeft="18dp"
+            android:onClick="OnClickSLE4428Open"
+            android:text="@string/BtOpen" />
+
+
+        <Button
+            android:id="@+id/SLE4428buttonPower"
+            style="@style/button_style_narrow_large"
+            android:onClick="OnClickSLE4428Power"
+            android:text="@string/BtPower" />
+
+        <Button
+            android:id="@+id/SLE4428buttonClose"
+            style="@style/button_style_narrow_large"
+            android:onClick="OnClickSLE4428Close"
+            android:text="@string/BtClose"/>
+    </LinearLayout>
+
+
+
+    <ScrollView
+        android:id="@+id/sle4428ScrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="448dp"
+        android:layout_below="@+id/sle4428openLayout"
+        android:fadeScrollbars="false"
+        android:layout_marginTop="10dp"
+        android:fillViewport="true"
+        android:scrollbarThumbVertical="@drawable/scrollbar"
+        android:scrollbarSize="8dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- =======================Write ==================================================================== -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="208dp"
+
+                android:background="@drawable/bg_content1"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="132dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/SLE4428WEwithPB"
+                        style="@style/button_style_narrow_large"
+                        android:layout_width="112dp"
+                        android:layout_height="52dp"
+                        android:layout_marginLeft="18dp"
+                        android:onClick="OnClickSLE4428WEwithPB"
+                        android:text="@string/BtWriteAndEraseWithPB" >
+                    </Button>
+
+                    <Button
+                        android:id="@+id/SLE4428WEwithoutPB"
+                        style="@style/button_style_narrow_large"
+                        android:layout_width="112dp"
+                        android:layout_height="52dp"
+                        android:layout_marginLeft="18dp"
+                        android:onClick="OnClickSLE4428WEwithoutPB"
+                        android:text="@string/BtWriteAndEraseWithoutPB"
+                        android:textSize="12dp"/>
+
+                    <Button
+                        android:id="@+id/SLE4428WritePBwithDataComp"
+                        style="@style/button_style_narrow_large"
+                        android:layout_width="112dp"
+                        android:layout_height="52dp"
+                        android:layout_marginLeft="18dp"
+                        android:onClick="OnClickSLE4428WriteProtectDataCompare"
+                        android:text="@string/BtWritePBwithDataCompare"
+                        android:textSize="12dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/SLE4428TextViewAddrWrite"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:layout_marginTop="8dp"
+                            android:text="Address(Dec)"/>
+
+                        <EditText
+                            android:id="@+id/SLE4428EditTextAddrWrite"
+                            style="@style/edt_style_vertical_xhdpi"
+                            android:gravity="center_horizontal"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:text="00"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/SLE4428TextDataWrite"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:text="Data(hex)"/>
+
+                        <EditText
+                            android:id="@+id/SLE4428EditTextDataWrite"
+                            style="@style/edt_style_vertical_xhdpi"
+                            android:gravity="center_horizontal"
+                            android:inputType="textMultiLine"
+                            android:maxLength="2"
+                            android:text="01"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <!-- =======================Write==================================================================== -->
+
+                <!-- =======================Read==================================================================== -->
+
+                <LinearLayout
+                    android:layout_width="132dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="38dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/SLE4428ReadP9Bits"
+                        style="@style/button_style_narrow_large"
+                        android:layout_width="112dp"
+                        android:layout_height="52dp"
+                        android:layout_marginLeft="18dp"
+                        android:onClick="OnClickSLE4428Read9"
+                        android:text="@string/BtRead9Bits" >
+                    </Button>
+
+                    <Button
+                        android:id="@+id/SLE4428ReadP8Bits"
+                        style="@style/button_style_narrow_large"
+                        android:layout_width="112dp"
+                        android:layout_height="52dp"
+                        android:layout_marginLeft="18dp"
+                        android:onClick="OnClickSLE4428CRead8"
+                        android:text="@string/BtRead8Bits" >
+                    </Button>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="132dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/SLE4428TextViewAddrRead"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:layout_marginTop="8dp"
+                            android:text="Address(Dec)"/>
+
+                        <EditText
+                            android:id="@+id/SLE4428EditTextAddrRead"
+                            style="@style/edt_style_vertical_xhdpi"
+                            android:gravity="center_horizontal"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:text="00"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/SLE4428TextLenRead"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:text="Length(Hex)"/>
+
+                        <EditText
+                            android:id="@+id/SLE4428EditTextLenRead"
+                            style="@style/edt_style_vertical_xhdpi"
+                            android:gravity="center_horizontal"
+                            android:inputType="textMultiLine"
+                            android:maxLength="2"
+                            android:text="04"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <!-- =======================Read==================================================================== -->
+            </LinearLayout>
+
+
+            <!-- =======================Verify==================================================================== -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="208dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_content1"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="132dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/SLE4428WriteErrorCounter"
+                        style="@style/button_style_narrow_large"
+                        android:layout_width="112dp"
+                        android:layout_height="52dp"
+                        android:layout_marginLeft="18dp"
+                        android:onClick="OnClickSLE4428WriteErrCount"
+                        android:text="@string/BtWriteErrorCounter" >
+                    </Button>
+
+                    <Button
+                        android:id="@+id/SLE4428Verify1stPSC"
+                        style="@style/button_style_narrow_large"
+                        android:layout_width="112dp"
+                        android:layout_height="52dp"
+                        android:layout_marginLeft="18dp"
+                        android:onClick="OnClickSLE4428V1P"
+                        android:text="@string/BtVerify1stPSC" >
+                    </Button>
+
+                    <Button
+                        android:id="@+id/SLE4428Verify2stPSC"
+                        style="@style/button_style_narrow_large"
+                        android:layout_width="112dp"
+                        android:layout_height="52dp"
+                        android:layout_marginLeft="18dp"
+                        android:onClick="OnClickSLE4428V2P"
+                        android:text="@string/BtVerify2ndPSC" >
+                    </Button>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/SLE4428TextViewDataVeriy"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:layout_marginTop="8dp"
+                            android:text="Data(Hex)"/>
+
+                        <EditText
+                            android:id="@+id/SLE4428EditTextDataVeriy"
+                            style="@style/edt_style_vertical_xhdpi"
+                            android:gravity="center_horizontal"
+                            android:inputType="textMultiLine"
+                            android:maxLength="2"
+                            android:text="00"/>
+                    </LinearLayout>
+                    <!-- =======================Verify==================================================================== -->
+
+
+                </LinearLayout>
+                <!-- =======================Verify Erase ErrCnt==================================================================== -->
+                <LinearLayout
+                    android:layout_width="132dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="38dp"
+                    android:layout_marginBottom="46dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/SLE4428VerifyPSCandEraseErrorCount"
+                        style="@style/button_style_narrow_large"
+                        android:layout_width="112dp"
+                        android:layout_height="62dp"
+                        android:layout_marginLeft="18dp"
+                        android:onClick="OnClickSLE4428VPEEC"
+                        android:text="@string/BtVerifyPSCandEraseErrorCount" >
+                    </Button>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/SLE4428TextViewDataPSC1"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:layout_marginTop="8dp"
+                            android:text="DataPSC1(Hex)"/>
+
+                        <EditText
+                            android:id="@+id/SLE4428EditTextDataPSC1"
+                            style="@style/edt_style_vertical_xhdpi"
+                            android:gravity="center_horizontal"
+                            android:inputType="textMultiLine"
+                            android:maxLength="2"
+                            android:text="FF"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/SLE4428TextDataPSC2"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:text="DataPSC2(Hex)"/>
+
+                        <EditText
+                            android:id="@+id/SLE4428EditTextDataPSC2"
+                            style="@style/edt_style_vertical_xhdpi"
+                            android:gravity="center_horizontal"
+                            android:inputType="textMultiLine"
+                            android:maxLength="2"
+                            android:text="FF"/>
+                    </LinearLayout>
+                    </LinearLayout>
+                <!-- =======================Verify Erase ErrCnt==================================================================== -->
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="282dp"
+        android:layout_below="@+id/sle4428ScrollView1"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/SLE4428TextResultLabel"
+            style="@style/text_style_vertical_xhdpi"
+            android:layout_marginLeft="18dp"
+            android:gravity="left"
+            android:text="Result:"/>
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="168dp"
+
+            android:fadeScrollbars="false"
+            android:scrollbarThumbVertical="@drawable/scrollbar"
+            android:scrollbarSize="8dp"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/SLE4428LayoutResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/SLE4428TextResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:text=""/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

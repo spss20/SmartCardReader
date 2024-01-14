@@ -1,0 +1,373 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    android:fitsSystemWindows="true" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/at45Dtoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_tool_bar">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/title_style_xhdpi"
+            android:layout_width="wrap_content"
+            android:text="@string/title_activity_at45_d041_" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/at45DopenLayout"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_below="@+id/at45Dtoolbar"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/AT45D041buttonOpen"
+            style="@style/button_style_narrow_xhdpi"
+            android:layout_marginLeft="18dp"
+            android:onClick="OnClickAT45D041Open"
+            android:text="@string/BtOpen" />
+
+
+        <Button
+            android:id="@+id/AT45D041buttonPower"
+            style="@style/button_style_narrow_xhdpi"
+            android:onClick="OnClickAT45D041Power"
+            android:text="@string/BtPower" />
+
+        <Button
+            android:id="@+id/AT45D041buttonClose"
+            style="@style/button_style_narrow_xhdpi"
+            android:onClick="OnClickAT45D041Close"
+            android:text="@string/BtClose"/>
+    </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:id="@+id/at45DLinearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="340dp"
+            android:layout_marginTop="16dp"
+            android:layout_below="@+id/at45DopenLayout"
+            android:background="@drawable/bg_content1"
+            android:orientation="horizontal">
+
+        <ScrollView
+            android:id="@+id/at45DscrowView"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="8dp"
+            android:fadeScrollbars="false"
+            android:fillViewport="true"
+            android:scrollbarThumbVertical="@drawable/scrollbar"
+            android:scrollbarSize="6dp"
+            android:orientation="vertical">
+
+            <!-- =======================scrow======= -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- =======Buttons============== -->
+
+                <Button
+                    android:id="@+id/AT45D041buttonMainMemRead"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:layout_width="118dp"
+                    android:layout_height="52dp"
+                    android:onClick="OnClickAT45D041MainMemRead"
+                    android:text="@string/BtReadMainMemory" />
+
+                <Button
+                    android:id="@+id/AT45D041buttonBuff1Read"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:layout_width="118dp"
+                    android:layout_height="52dp"
+                    android:onClick="OnClickAT45D041Buff1Read"
+                    android:text="@string/BtBuff1Read" />
+
+                <Button
+                    android:id="@+id/AT45D041buttonBuff2Read"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:layout_width="118dp"
+                    android:layout_height="52dp"
+                    android:onClick="OnClickAT45D041Buff2Read"
+                    android:text="@string/BtBuff2Read" />
+
+                <Button
+                    android:id="@+id/AT45D041buttonMainMemPagetoBuf1Xfr"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:layout_width="118dp"
+                    android:layout_height="52dp"
+                    android:onClick="OnClickAT45D041MainMemPagetoBuf1Xfr"
+                    android:text="@string/BtMainMemPageToBuf1Xfr" />
+
+                <Button
+                    android:id="@+id/AT45D041buttonMainMemPagetoBuf2Xfr"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:layout_width="118dp"
+                    android:layout_height="52dp"
+                    android:onClick="OnClickAT45D041MainMemPagetoBuf2Xfr"
+                    android:text="@string/BtMainMemPageToBuf2Xfr" />
+
+                <Button
+                    android:id="@+id/AT45D041buttonMainMemPagetoBuf1Comp"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:layout_width="118dp"
+                    android:layout_height="52dp"
+                    android:onClick="OnClickAT45D041MainMemPagetoBuf1Comp"
+                    android:text="@string/BtMainMemPageToBuf1Comp" />
+
+                <Button
+                    android:id="@+id/AT45D041buttonMainMemPagetoBuf2Comp"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:layout_width="118dp"
+                    android:layout_height="52dp"
+                    android:onClick="OnClickAT45D041MainMemPagetoBuf2Comp"
+                    android:text="@string/BtMainMemPageToBuf2Comp" />
+
+                <Button
+                    android:id="@+id/AT45D041buttonBuff1Write"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:layout_width="118dp"
+                    android:layout_height="52dp"
+                    android:onClick="OnClickAT45D041Buff1Write"
+                    android:text="@string/BtBuff1Write" />
+
+                <Button
+                    android:id="@+id/AT45D041buttonBuff2Write"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:layout_width="118dp"
+                    android:layout_height="52dp"
+                    android:onClick="OnClickAT45D041Buff2Write"
+                    android:text="@string/BtBuff2Write" />
+
+                <Button
+                    android:id="@+id/AT45D041buttonB1toMwithErase"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:layout_width="118dp"
+                    android:layout_height="52dp"
+                    android:onClick="OnClickAT45D041B1toMwithErase"
+                    android:text="@string/BtBuff1ToMemWithErase" />
+
+                <Button
+                    android:id="@+id/AT45D041buttonB2toMwithErase"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:layout_width="118dp"
+                    android:layout_height="52dp"
+                    android:onClick="OnClickAT45D041B2toMwithErase"
+                    android:text="@string/BtBuff2ToMemWithErase" />
+
+                <Button
+                    android:id="@+id/AT45D041buttonB1toMwithoutErase"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:layout_width="118dp"
+                    android:layout_height="52dp"
+                    android:onClick="OnClickAT45D041B1toMwithoutErase"
+                    android:text="@string/BtBuff1ToMemWithoutErase" />
+
+                <Button
+                    android:id="@+id/AT45D041buttonB2toMwithoutErase"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:layout_width="118dp"
+                    android:layout_height="52dp"
+                    android:onClick="OnClickAT45D041B2toMwithoutErase"
+                    android:text="@string/BtBuff2ToMemWithoutErase" />
+
+                <Button
+                    android:id="@+id/AT45D041buttonMemProgThrB1"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:layout_width="118dp"
+                    android:layout_height="52dp"
+                    android:onClick="OnClickAT45D041MemProgThrB1"
+                    android:text="@string/BtMemPageProgThroughBuff1" />
+
+                <Button
+                    android:id="@+id/AT45D041buttonMemProgThrB2"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:layout_width="118dp"
+                    android:layout_height="52dp"
+                    android:onClick="OnClickAT45D041MemProgThrB2"
+                    android:text="@string/BtMemPageProgThroughBuff2" />
+
+                <Button
+                    android:id="@+id/AT45D041buttonAutoReWriteThrB1"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:layout_width="118dp"
+                    android:layout_height="58dp"
+                    android:onClick="OnClickAT45D041AutoReWriteThrB1"
+                    android:text="@string/BtAutoPageReWriteThroughBuff1" />
+
+                <Button
+                    android:id="@+id/AT45D041buttonAutoReWriteThrB2"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:layout_width="118dp"
+                    android:layout_height="58dp"
+                    android:onClick="OnClickAT45D041AutoReWriteThrB2"
+                    android:text="@string/BtAutoPageReWriteThroughBuff2" />
+
+                <Button
+                    android:id="@+id/AT45D041buttonGetStatusReg"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:layout_width="118dp"
+                    android:layout_height="52dp"
+                    android:onClick="OnClickAT45D041GetStatusReg"
+                    android:text="@string/BtGetStatusRegister" />
+
+                <!-- =======Buttons============== -->
+
+            </LinearLayout>
+            <!-- =======================scrow======= -->
+        </ScrollView>
+        <!-- =======Inputs============== -->
+    <ScrollView
+        android:id="@+id/scrollView13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="8dp"
+        android:fadeScrollbars="false"
+        android:scrollbarThumbVertical="@drawable/scrollbar"
+        android:scrollbarSize="6dp"
+        android:fillViewport="true" >
+        <LinearLayout
+            android:layout_width="168dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/at45Dfield1"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/AT45D041TextPageNum"
+                    style="@style/text_style_vertical_xhdpi"
+                    android:text="Page Num(DEC)" />
+
+                <EditText
+                    android:id="@+id/AT45D041EdtPageNum"
+                    style="@style/edt_style_vertical_xhdpi"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:text="00" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/at45Dfield2"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/AT45D041TextAddressInBuf"
+                    style="@style/text_style_vertical_xhdpi"
+                    android:text="Address in Buffer or memory(Dec)" />
+
+                <EditText
+                    android:id="@+id/AT45D041EdtAddressInBuf"
+                    style="@style/edt_style_vertical_xhdpi"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:text="00"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/at45Dfield3"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/AT45D041TextLength"
+                    style="@style/text_style_vertical_xhdpi"
+                    android:text="Length to Read (Dec)" />
+
+                <EditText
+                    android:id="@+id/AT45D041EdtLength"
+                    style="@style/edt_style_vertical_xhdpi"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:text="15"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="112dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/AT45D041TextDataWrite"
+                    style="@style/text_style_vertical_xhdpi"
+                    android:text="Data to Write">
+
+                </TextView>
+
+                    <EditText
+                        android:id="@+id/AT45D041EdtData"
+                        style="@style/edt_style_vertical_xhdpi"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        android:inputType="textMultiLine"
+                        android:maxLength="65535"
+                        android:paddingTop="8dp"
+                        android:text="000102030405"/>
+
+            </LinearLayout>
+        </LinearLayout>
+        <!-- =======Inputs============== -->
+</ScrollView>
+
+        </LinearLayout>
+    <!-- =======================result===================================================================== -->
+
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="138dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/at45DLinearLayout1"
+            android:scrollbarThumbVertical="@drawable/scrollbar"
+            android:scrollbarSize="6dp"
+            android:fillViewport="true" >
+
+            <LinearLayout
+                android:id="@+id/AT45D041LayoutResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+                <TextView
+                    android:id="@+id/AT45D041TextResultLabel"
+                    style="@style/text_style_vertical_xhdpi"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="18dp"
+                    android:gravity="left"
+                    android:text="Result:" >
+                </TextView>
+                <TextView
+                    android:id="@+id/AT45D041TextResult"
+                    android:textSize="14dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" >
+                </TextView>
+            </LinearLayout>
+        </ScrollView>
+    <!-- =======================result===================================================================== -->
+
+</RelativeLayout>

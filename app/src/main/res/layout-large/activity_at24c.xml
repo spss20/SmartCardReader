@@ -1,0 +1,297 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    android:fitsSystemWindows="true">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_tool_bar">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/title_style_xhdpi"
+            android:layout_width="wrap_content"
+            android:text="@string/title_activity_at24_c_" />
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <LinearLayout
+        android:id="@+id/at24CopenLayout"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/AT24CbuttonOpen"
+            style="@style/button_style_narrow_large"
+            android:layout_marginLeft="24dp"
+            android:onClick="OnClickAT24COpen"
+                android:text="@string/BtOpen" />
+
+
+        <Button
+            android:id="@+id/AT24Cbuttonpower"
+            style="@style/button_style_narrow_large"
+            android:onClick="OnClickAT24CPower"
+            android:text="@string/BtPower" />
+
+        <Button
+            android:id="@+id/AT24CbuttonClose"
+            style="@style/button_style_narrow_large"
+            android:onClick="OnClickAT24CClose"
+            android:text="@string/BtClose" >
+        </Button>
+
+        </LinearLayout>
+
+
+
+
+            <RadioGroup
+                android:id="@+id/radioGroup1"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_below="@+id/at24CopenLayout"
+                android:layout_marginLeft="24dp"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioSingle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:button="@drawable/radio_selector"
+                    android:text="Single"
+                    android:textSize="16dp" />
+
+                <RadioButton
+                    android:id="@+id/radioDouble"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/radio_selector"
+                    android:text="Double"
+                    android:textSize="16dp"/>
+            </RadioGroup>
+
+
+
+
+    <!-- ==================write============================================================= -->
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="226dp"
+        android:layout_below="@+id/radioGroup1"
+        android:layout_marginTop="10dp"
+        android:fadeScrollbars="false"
+        android:scrollbarThumbVertical="@drawable/scrollbar"
+        android:scrollbarSize="8dp"
+        android:fillViewport="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="102dp"
+                android:paddingTop="20dp"
+                android:background="@drawable/bg_content2"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/AT24CbuttonWrite"
+                    style="@style/button_style_narrow_large"
+                    android:layout_marginLeft="24dp"
+                    android:onClick="OnClickAT24CWrite"
+                    android:text="@string/BtWrite" />
+
+                <LinearLayout
+                    android:layout_width="432dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="5dp"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="104dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/AT24CTextWriteAddr"
+                                style="@style/text_style_vertical_xhdpi"
+                                android:text="Address(Hex)" >
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/AT24CEditTextWriteAddr"
+                                style="@style/edt_style_vertical_xhdpi"
+                                android:inputType="textMultiLine"
+                                android:maxLength="6"
+                                android:text="01" >
+                            </EditText>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="104dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/AT24CTextPageSize"
+                                style="@style/text_style_vertical_xhdpi"
+                                android:text="PageSize(Hex)" >
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/AT24CEditTexPageSize"
+                                style="@style/edt_style_vertical_xhdpi"
+                                android:inputType="textMultiLine"
+                                android:maxLength="2"
+                                android:text="08" >
+                            </EditText>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="164dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical" >
+
+                        <TextView
+                                android:id="@+id/AT24CTextData"
+                                android:layout_width="68dp"
+                                style="@style/text_style_vertical_xhdpi"
+                                android:text="Data(Hex)" >
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/AT24CEditTexData"
+                                style="@style/edt_style_vertical_xhdpi"
+                                android:inputType="textMultiLine"
+                                android:maxLength="256"
+                                android:text="5678" >
+                            </EditText>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!-- =========Data========= -->
+
+
+
+                    <!-- =========Data========= -->
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ==================write============================================================== -->
+            <!-- ==================read============================================================= -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="102dp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="20dp"
+                android:background="@drawable/bg_content2"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/AT24CbuttonRead"
+                    style="@style/button_style_narrow_large"
+                    android:layout_marginLeft="24dp"
+                    android:onClick="OnClickAT24CRead"
+                    android:text="@string/BtRead" />
+
+                <LinearLayout
+                    android:layout_width="104dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/AT24CTextReadAddr"
+                        style="@style/text_style_vertical_xhdpi"
+                        android:text="Address(Hex)" />
+
+                    <EditText
+                        android:id="@+id/AT24CEditTextReadAddr"
+                        style="@style/edt_style_vertical_xhdpi"
+                        android:inputType="textMultiLine"
+                        android:maxLength="6"
+                        android:text="00" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="104dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/AT24CTextLen"
+                        style="@style/text_style_vertical_xhdpi"
+                        android:text="Length(Hex)"/>
+
+                    <EditText
+                        android:id="@+id/AT24CEditTexLen"
+                        style="@style/edt_style_vertical_xhdpi"
+                        android:inputType="textMultiLine"
+                        android:maxLength="4"
+                        android:text="08"/>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- ==================read============================================================== -->
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_below="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="288dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/AT24CTextResultLabel"
+            style="@style/text_style_vertical_xhdpi"
+            android:layout_marginLeft="18dp"
+            android:gravity="left"
+            android:text="Result:"/>
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="422dp"
+            android:fadeScrollbars="false"
+            android:scrollbarThumbVertical="@drawable/scrollbar"
+            android:scrollbarSize="8dp"
+            android:fillViewport="true" >
+
+            <LinearLayout
+                android:id="@+id/AT24CLayoutResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/AT24CTextResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:text="" >
+                </TextView>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

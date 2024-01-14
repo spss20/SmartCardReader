@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <supports-screens android:resizeable="true"
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:xlargeScreens="true"
+        android:anyDensity="true" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:name="com.alcorlink.smartcard.SmartCardReaderApp"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:configChanges="fontScale"
+        android:theme="@style/AppTheme">
+
+
+        <activity android:name="com.alcorlink.smartcard.MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name="com.alcorlink.smartcard.ISO7816_Activity"
+            android:label="@string/title_activity_7816_"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity
+            android:name="com.alcorlink.smartcard.SLE4428_Activity"
+            android:label="@string/title_activity_sle4428_"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity
+            android:name="com.alcorlink.smartcard.SLE4442_Activity"
+            android:label="@string/title_activity_sle4442_"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity
+            android:name="com.alcorlink.smartcard.SLE6636_Activity"
+            android:label="@string/title_activity_sle6636_"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity
+            android:name="com.alcorlink.smartcard.AT88SC102_Activity"
+            android:label="@string/title_activity_at88_sc102_"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity
+            android:name="com.alcorlink.smartcard.AT24C_Activity"
+            android:label="@string/title_activity_at24_c_"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity
+            android:name="com.alcorlink.smartcard.AT88SC1608_Activity"
+            android:label="@string/title_activity_at88_sc1608_"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity
+            android:name="com.alcorlink.smartcard.AT88SC153_Activity"
+            android:label="@string/title_activity_at88_sc153_"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity
+            android:name="com.alcorlink.smartcard.AT45D041_Activity"
+            android:label="@string/title_activity_at45_d041_"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity
+            android:name="com.alcorlink.smartcard.MifareS50_Activity"
+            android:label="@string/title_activity_mifare_s50"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    android:fitsSystemWindows="true" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/sle6636toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_tool_bar">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/title_style_xhdpi"
+            android:layout_width="wrap_content"
+            android:text="@string/title_activity_sle6636_" />
+
+    </android.support.v7.widget.Toolbar>
+    <LinearLayout
+        android:id="@+id/sle6636openlayout"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_below="@+id/sle6636toolbar"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/SLE6636buttonOpen"
+            style="@style/button_style_narrow_xhdpi"
+            android:layout_marginLeft="18dp"
+            android:onClick="OnClickSLE6636Open"
+            android:text="@string/BtOpen" />
+
+        <Button
+            android:id="@+id/SLE6636buttonPower"
+            style="@style/button_style_narrow_xhdpi"
+            android:onClick="OnClickSLE6636Power"
+            android:text="@string/BtPower" />
+
+         <Button
+            android:id="@+id/SLE6636buttonClose"
+             style="@style/button_style_narrow_xhdpi"
+             android:onClick="OnClickSLE6636Close"
+            android:text="@string/BtClose" >
+        </Button>
+        </LinearLayout>
+
+
+
+    <ScrollView
+        android:id="@+id/scrollView0"
+        android:layout_width="match_parent"
+        android:layout_height="340dp"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/sle6636openlayout"
+        android:fadeScrollbars="false"
+        android:fillViewport="true"
+        android:scrollbarThumbVertical="@drawable/scrollbar"
+        android:scrollbarSize="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="224dp"
+                android:background="@drawable/bg_content1"
+                android:orientation="vertical">
+
+
+                <!-- =======================read write==================================================================== -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="62dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/SLE6636buttonWriteMem"
+                        style="@style/button_style_narrow_xhdpi"
+                        android:layout_width="112dp"
+                        android:layout_marginLeft="18dp"
+                        android:onClick="OnClickSLE6636WriteMem"
+                        android:text="@string/BtWriteMem"/>
+
+                    <Button
+                        android:id="@+id/SLE6636buttonReadMem"
+                        style="@style/button_style_narrow_xhdpi"
+                        android:layout_width="112dp"
+                        android:layout_marginLeft="18dp"
+                        android:onClick="OnClickSLE6636ReadMem"
+                        android:text="@string/BtReadMem"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="144dp"
+                    android:layout_marginLeft="12dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="58dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/SLE6636TextAddrMem"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:text="Address"/>
+
+                        <EditText
+                            android:id="@+id/SLE6636EditTextAddrMem"
+                            style="@style/edt_style_vertical_xhdpi"
+                            android:inputType="textMultiLine"
+                            android:maxLength="2"
+                            android:text="00"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="58dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/SLE6636TextLen"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:text="DataLen"/>
+
+                        <EditText
+                            android:id="@+id/SLE6636EditTextLen"
+                            style="@style/edt_style_vertical_xhdpi"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:text="01"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="142dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/SLE6636TextDataMem"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:text="Data">
+
+                        </TextView>
+
+                        <EditText
+                            android:id="@+id/SLE6636EditTextDataMem"
+                            style="@style/edt_style_vertical_xhdpi"
+                            android:layout_height="match_parent"
+                            android:inputType="textMultiLine"
+                            android:maxLength="96"
+                            android:text="01"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <!-- =======================read write==================================================================== -->
+            </LinearLayout>
+
+            <!-- =======================read write counter==================================================================== -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_content1"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="140dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="4dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/SLE6636buttonWriteCounter"
+                        style="@style/button_style_narrow_xhdpi"
+                        android:layout_width="112dp"
+                        android:layout_marginLeft="18dp"
+                        android:onClick="OnClickSLE6636WriteCounter"
+                        android:text="@string/BtWriteCounter"/>
+
+                    <Button
+                        android:id="@+id/SLE6636buttonReadCounter"
+                        style="@style/button_style_narrow_xhdpi"
+                        android:layout_width="112dp"
+                        android:layout_marginLeft="18dp"
+                        android:onClick="OnClickSLE6636ReadCounter"
+                        android:text="@string/BtReadCounter"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="58dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/SLE6636TextAddrCounter"
+                        style="@style/text_style_vertical_xhdpi"
+                        android:text="Address">
+
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/SLE6636EditTextAddrCounter"
+                        style="@style/edt_style_vertical_xhdpi"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:maxLength="2"
+                        android:text="00"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="142dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/SLE6636TextDataCounter"
+                        style="@style/text_style_vertical_xhdpi"
+                        android:text="Data"/>
+
+                    <EditText
+                        android:id="@+id/SLE6636EditTextDataCounter"
+                        style="@style/edt_style_vertical_xhdpi"
+                        android:inputType="textMultiLine"
+                        android:maxLength="2"
+                        android:text="01"
+                        android:textColor="#000000"/>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- =======================read write counter==================================================================== -->
+
+
+            <!-- =======================reload==================================================================== -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_content1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/SLE6636buttonReload"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:layout_width="112dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="30dp"
+                    android:onClick="OnClickSLE6636Reload"
+                    android:text="@string/BtReload"/>
+
+                <LinearLayout
+                    android:layout_width="58dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/SLE6636TextAddrReload"
+                        style="@style/text_style_vertical_xhdpi"
+                        android:text="Address"/>
+
+                    <EditText
+                        android:id="@+id/SLE6636EditTextAddrReload"
+                        style="@style/edt_style_vertical_xhdpi"
+                        android:inputType="textMultiLine"
+                        android:maxLength="2"
+                        android:text="00"/>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- =======================reload==================================================================== -->
+            <!-- =======================authentication============================================================== -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="204dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_content1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="62dp"
+                    android:layout_marginTop="6dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/SLE6636buttonAuthentication"
+                        style="@style/button_style_narrow_xhdpi"
+                        android:layout_width="112dp"
+                        android:layout_marginLeft="18dp"
+                        android:onClick="OnClickSLE6636Authenticate"
+                        android:text="@string/BtAuthentication"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="114dp"
+                    android:layout_marginLeft="18dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="58dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/SLE6636TextKey"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:text="Key"/>
+
+                        <EditText
+                            android:id="@+id/SLE6636EditTextKey"
+                            style="@style/edt_style_vertical_xhdpi"
+                            android:inputType="textMultiLine"
+                            android:maxLength="2"
+                            android:text="00"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="58dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/SLE6636TexClock"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:text="clock"/>
+
+                        <EditText
+                            android:id="@+id/SLE6636EditTextClock"
+                            style="@style/edt_style_vertical_xhdpi"
+                            android:inputType="textMultiLine"
+                            android:maxLength="2"
+                            android:text="00"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="142dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/SLE6636TextChallenge"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:text="Challenge"/>
+
+                        <EditText
+                            android:id="@+id/SLE6636EditTexChallenge"
+                            style="@style/edt_style_vertical_xhdpi"
+                            android:layout_height="match_parent"
+                            android:inputType="textMultiLine"
+                            android:maxLength="48"
+                            android:text="00"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- =======================authentication============================================================== -->
+            <!-- =======================verify============================================================== -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/bg_content1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="62dp"
+                    android:layout_marginTop="6dp"
+                    android:orientation="horizontal">
+                <Button
+                    android:id="@+id/SLE6636buttonVerification"
+                    style="@style/button_style_narrow_xhdpi"
+                        android:layout_width="92dp"
+                    android:layout_marginLeft="18dp"
+                    android:onClick="OnClickSLE6636Verification"
+                        android:text="@string/BtVerification"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginRight="18dp"
+                    android:orientation="horizontal"
+                    tools:ignore="DisableBaselineAlignment">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/SLE6636TextTc1"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:text="TC1"/>
+
+                        <EditText
+                            android:id="@+id/SLE6636EditTextTc1"
+                            style="@style/edt_style_vertical_xhdpi"
+                            android:inputType="textMultiLine"
+                            android:maxLength="2"
+                            android:text="00"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/SLE6636TextTc2"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:text="TC2"/>
+
+                        <EditText
+                            android:id="@+id/SLE6636EditTextTc2"
+                            style="@style/edt_style_vertical_xhdpi"
+                            android:inputType="textMultiLine"
+                            android:maxLength="2"
+                            android:text="00"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/SLE6636TextTc3"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:text="TC3"/>
+
+                        <EditText
+                            android:id="@+id/SLE6636EditTextTc3"
+                            style="@style/edt_style_vertical_xhdpi"
+                            android:inputType="textMultiLine"
+                            android:maxLength="2"
+                            android:text="00"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- =======================verify============================================================== -->
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="138dp"
+        android:layout_below="@+id/scrollView0"
+        android:layout_marginTop="10dp"
+        android:fadeScrollbars="false"
+        android:fillViewport="true"
+        android:scrollbarSize="6dp"
+        android:scrollbarThumbVertical="@drawable/scrollbar">
+
+        <LinearLayout
+            android:id="@+id/SLE6636LayoutResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/SLE6636TextResultLabel"
+                style="@style/text_style_vertical_xhdpi"
+                android:layout_height="16dp"
+                android:layout_marginLeft="18dp"
+                android:gravity="left"
+                android:text="Result:"/>
+
+            <TextView
+                android:id="@+id/SLE6636TextResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="14dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

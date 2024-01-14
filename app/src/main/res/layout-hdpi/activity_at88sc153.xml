@@ -1,0 +1,435 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    android:fitsSystemWindows="true" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/AT88SC153Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:background="@drawable/bg_tool_bar">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/title_style_hdpi"
+            android:layout_width="wrap_content"
+            android:text="@string/title_activity_at88_sc153_" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/AT88SC153OpenLayout"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_below="@+id/AT88SC153Toolbar"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/AT88SC153buttonOpen"
+            style="@style/button_style_narrow_hdpi"
+            android:layout_marginLeft="12dp"
+            android:onClick="OnClickAT88SC153Open"
+            android:text="@string/BtOpen" />
+
+        <Button
+            android:id="@+id/AT88SC153buttonPower"
+            style="@style/button_style_narrow_hdpi"
+            android:onClick="OnClickAT88SC153Power"
+            android:text="@string/BtPower" />
+
+        <Button
+            android:id="@+id/AT88SC153buttonClose"
+            style="@style/button_style_narrow_hdpi"
+            android:onClick="OnClickAT88SC153Close"
+            android:text="@string/BtClose"/>
+    </LinearLayout>
+
+
+
+
+    <ScrollView
+        android:id="@+id/AT88SC153ScrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="272dp"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/AT88SC153OpenLayout"
+        android:fadeScrollbars="false"
+        android:fillViewport="true"
+        android:scrollbarThumbVertical="@drawable/scrollbar"
+        android:scrollbarSize="4dp"
+        android:orientation="vertical">
+
+        <!-- =======================scrow===================================================================== -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+
+            <!-- =======================read write eeprom======================= -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="302dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_content1"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="172dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/AT88SC153WriteEep"
+                        style="@style/button_style_narrow_hdpi"
+                        android:layout_width="98dp"
+                        android:layout_height="46dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="4dp"
+                        android:onClick="OnClickAT88SC153WriteEeprom"
+                        android:text="@string/BtWriteEeprom"/>
+
+                    <LinearLayout
+                        android:layout_width="162dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="6dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="98dp"
+                            android:layout_height="42dp"
+                            android:layout_marginTop="6dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/AT88SC153TextAddrEepWrite"
+                                style="@style/text_style_vertical_hdpi"
+                                android:layout_width="91dp"
+                                android:text="Address(Hex)"/>
+
+                            <EditText
+                                android:id="@+id/AT88SC153EditTextAddrEepWrite"
+                                style="@style/edt_style_vertical_hdpi"
+                                android:layout_marginTop="4dp"
+                                android:gravity="center_horizontal"
+                                android:inputType="textMultiLine"
+                                android:maxLength="2"
+                                android:text="00"/>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:layout_marginTop="6dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/AT88SC153TextDataEepWrite"
+                                style="@style/text_style_vertical_hdpi"
+                                android:layout_marginLeft="10dp"
+                                android:gravity="start"
+                                android:text="Data(Hex)"/>
+
+                            <EditText
+                                android:id="@+id/AT88SC153EditTextDataEepWrite"
+                                style="@style/edt_style_vertical_hdpi"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="4dp"
+                                android:gravity="center_horizontal"
+                                android:inputType="textMultiLine"
+                                android:maxLength="96"
+                                android:text="01"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/AT88SC153ReadEEp"
+                        style="@style/button_style_narrow_hdpi"
+                        android:layout_height="46dp"
+                        android:layout_width="98dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="4dp"
+                        android:onClick="OnClickAT88SC153ReadEeprom"
+                        android:text="@string/BtReadEeprom"/>
+
+                    <LinearLayout
+                        android:layout_width="102dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="6dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/AT88SC153TextAddrEepRead"
+                            style="@style/text_style_vertical_hdpi"
+                            android:text="Address(Hex)"/>
+
+                        <EditText
+                            android:id="@+id/AT88SC153EditTextAddrEepRead"
+                            style="@style/edt_style_vertical_hdpi"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center_horizontal"
+                            android:inputType="textMultiLine"
+                            android:maxLength="2"
+                            android:text="00"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="92dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="6dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/AT88SC153TextLenEepRead"
+                            style="@style/text_style_vertical_hdpi"
+                            android:text="Data Len(Hex)"/>
+
+                        <EditText
+                            android:id="@+id/AT88SC153EditTextLenEepRead"
+                            style="@style/edt_style_vertical_hdpi"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center_horizontal"
+                            android:inputType="textMultiLine"
+                            android:maxLength="3"
+                            android:text="40"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginLeft="12dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/text_style_horizontal_hdpi"
+                        android:layout_width="72dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="Select Zone" />
+
+                    <RelativeLayout
+                        android:id="@+id/AT88SC153LayoutSelectBlock"
+                        android:layout_height="match_parent"
+                        android:layout_width="92dp"
+                        android:layout_marginRight="10dp">
+
+                        <Spinner
+                            android:id="@+id/AT88SC153spinnerZone"
+                            style="@style/spinner_style"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="6dp"
+                            android:paddingRight="6dp"
+                            android:textSize="14dp"
+                            android:spinnerMode="dialog" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="4dp"
+                            android:src="@drawable/btn_drop_down_list" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- =======================read write eeprom============================= -->
+
+
+            <!-- =======================Verify PW======================= -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="162dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_content1"
+                android:visibility="visible"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/AT88SC153VerifyPassWd"
+                    style="@style/button_style_narrow_hdpi"
+                    android:layout_height="46dp"
+                    android:layout_width="98dp"
+                    android:layout_marginLeft="12dp"
+                    android:onClick="OnClickAT88SC153VerifyPassWd"
+                    android:text="@string/BtVerifyPassword"/>
+
+                <LinearLayout
+                    android:layout_width="98dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/AT88SC153TextVpWR"
+                        style="@style/text_style_vertical_hdpi"
+                        android:text="R/W"/>
+
+                    <RadioGroup
+                        android:id="@+id/radioPwGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="62dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/radioWrite"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/radio_selector"
+                            android:textSize="12dp"
+                            android:checked="true"
+                            android:text="@string/BtWrite" />
+
+                        <RadioButton
+                            android:id="@+id/radioRead"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="12dp"
+                            android:button="@drawable/radio_selector"
+                            android:text="@string/BtRead" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/AT88SC153TextVpIndex"
+                        style="@style/text_style_vertical_hdpi"
+                        android:layout_marginTop="5dp"
+                        android:text="Zone"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="4dp" >
+                        <Spinner
+                            android:id="@+id/AT88SC153spinnerIndex"
+                            style="@style/spinner_style"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:textSize="14dp"
+                            android:spinnerMode="dialog" />
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:src="@drawable/btn_drop_down_list" />
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <!-- =====Password============= -->
+
+                <LinearLayout
+                    android:layout_width="98dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/AT88SC153TextPassWord"
+                        style="@style/text_style_vertical_hdpi"
+                        android:text="PassWord(Hex)"/>
+
+                    <EditText
+                        android:id="@+id/AT88SC153EditTextPw1"
+                        style="@style/edt_style_vertical_hdpi"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center_horizontal"
+                        android:inputType="textMultiLine"
+                        android:maxLength="2"
+                        android:text="34"/>
+
+                    <EditText
+                        android:id="@+id/AT88SC153EditTextPw2"
+                        style="@style/edt_style_vertical_hdpi"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:inputType="textMultiLine"
+                        android:maxLength="2"
+                        android:text="34"/>
+
+                    <EditText
+                        android:id="@+id/AT88SC153EditTextPw3"
+                        style="@style/edt_style_vertical_hdpi"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:inputType="textMultiLine"
+                        android:maxLength="2"
+                        android:text="34"/>
+                </LinearLayout>
+                <!-- =====Password============= -->
+            </LinearLayout>
+
+            <!-- ========================Verify PW============================= -->
+        </LinearLayout>
+        <!-- =======================scrow===================================================================== -->
+    </ScrollView>
+
+
+    <!-- =======================result===================================================================== -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:layout_below="@+id/AT88SC153ScrollView1"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/AT88SC153TextResultLabel"
+            style="@style/text_style_vertical_hdpi"
+            android:layout_marginLeft="12dp"
+            android:gravity="left"
+            android:text="Result:" >
+        </TextView>
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:fadeScrollbars="false"
+            android:layout_marginLeft="12dp"
+            android:scrollbarThumbVertical="@drawable/scrollbar"
+            android:scrollbarSize="4dp"
+            android:fillViewport="true" >
+
+            <LinearLayout
+                android:id="@+id/AT88SC153LayoutResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/AT88SC153TextResult"
+                    android:textSize="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" >
+                </TextView>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    <!-- =======================result===================================================================== -->
+
+</RelativeLayout>

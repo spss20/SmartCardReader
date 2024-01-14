@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    android:fitsSystemWindows="true">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/iso7816toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_tool_bar">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/title_style_xhdpi"
+            android:layout_width="wrap_content"
+
+            android:text="@string/title_activity_7816_" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/iso7816ScrollView0"
+        android:layout_below="@+id/iso7816toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="268dp">
+    <LinearLayout
+        android:id="@+id/iso7816openLayout"
+        android:layout_width="match_parent"
+        android:layout_height="368dp"
+
+        android:layout_marginTop="-4dp"
+        android:background="@drawable/bg_content1"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="168dp"
+            android:layout_marginRight="8dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/ISO7816buttonOpen"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:layout_marginLeft="18dp"
+                    android:background="@drawable/button_narrow"
+                    android:onClick="OnClickISO7816Open"
+                    android:text="@string/BtOpen" />
+
+                <Button
+                    android:id="@+id/ISO7816buttonPower"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:background="@drawable/button_narrow"
+                    android:onClick="OnClickISO7816Power"
+                    android:text="@string/BtPower" />
+
+                <Button
+                    android:id="@+id/ISO7816buttonProtocol"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:background="@drawable/button_narrow"
+                    android:onClick="OnClickISO7816getProtocol"
+                    android:text="@string/BtProtocol" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/ISO7816buttonATR"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:layout_marginLeft="18dp"
+                    android:background="@drawable/button_narrow"
+                    android:onClick="OnClickISO7816getATR"
+                    android:text="@string/BtGetATR" />
+
+                <Button
+                    android:id="@+id/ISO7816buttonAPDU"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:background="@drawable/button_narrow"
+                    android:onClick="OnClickISO7816sendAPDUk"
+                    android:text="@string/BtSebAPDU"/>
+
+                <Button
+                    android:id="@+id/ISO7816buttonClose"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:background="@drawable/button_narrow"
+                    android:onClick="OnClickISO7816Close"
+                    android:text="@string/BtClose" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/ISO7816buttonSN"
+                    style="@style/button_style_narrow_xhdpi"
+                    android:background="@drawable/button_narrow"
+                    android:onClick="OnClickISO7816getSN"
+                    android:text="@string/BtGetSN"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/ISO7816textAPDU"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+                android:text="APDU to send"
+                android:textColor="#0BADEA"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/ISO7816editTextAPDU"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:backgroundTint="#0BADEA"
+                android:cursorVisible="false"
+                android:elegantTextHeight="false"
+                android:fitsSystemWindows="true"
+                android:gravity="bottom"
+                android:inputType="textMultiLine"
+                android:text="A0A40000023f00"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="242dp"
+        android:layout_below="@+id/iso7816ScrollView0"
+        android:fadeScrollbars="false"
+        android:scrollbarThumbVertical="@drawable/scrollbar"
+        android:scrollbarSize="6dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/ISO7816LayoutResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/ISO7816textResult"
+                android:textSize="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="14dp"
+                android:text="" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

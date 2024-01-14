@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mifare_s50_config"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:windowSoftInputMode="adjustResize|stateHidden"
+    android:fitsSystemWindows="true" >
+
+    <ScrollView
+        android:id="@+id/ScollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fadeScrollbars="false"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp">
+
+                <CheckBox
+                    android:id="@+id/MifS50CheckBoxA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="KeyA" />
+
+                <EditText
+                    android:id="@+id/MifS50EditTextKeyA"
+                    style="@style/edt_style_vertical_hdpi"
+                    android:inputType="textMultiLine"
+                    android:maxLength="12"
+                    android:layout_marginRight="8dp"
+                    android:text="FFFFFFFFFFFF"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp">
+
+                <CheckBox
+                    android:id="@+id/MifS50CheckBoxB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="KeyB" />
+
+                <EditText
+                    android:id="@+id/MifS50EditTextKeyB"
+                    style="@style/edt_style_vertical_hdpi"
+                    android:inputType="textMultiLine"
+                    android:maxLength="12"
+                    android:layout_marginRight="8dp"
+                    android:text="FFFFFFFFFFFF"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/MifS50TextView01"
+                    android:layout_width="48dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="Sector"
+                    android:textSize="12dp" />
+
+                <RelativeLayout
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="5dp">
+
+                    <Spinner
+                        android:id="@+id/MifS50SpinnerSector"
+                        style="@style/spinner_style"
+                        android:paddingLeft="6dp"
+                        android:paddingRight="6dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:spinnerMode="dialog" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="4dp"
+                        android:src="@drawable/btn_drop_down_list" />
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/MifS50textSpinnerBlockLabel"
+                    android:layout_width="36dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="Block"
+                    android:textSize="12dp" />
+
+
+                <RelativeLayout
+                    android:id="@+id/MifiS50LayoutSelectBlock"
+                    android:layout_width="92dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp">
+
+                    <Spinner
+                        android:id="@+id/MifS50SpinnerBlock"
+                        style="@style/spinner_style"
+                        android:paddingLeft="6dp"
+                        android:paddingRight="6dp"
+                        android:spinnerMode="dialog" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="4dp"
+                        android:src="@drawable/btn_drop_down_list" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!-- =========================Increase/Decrease=============================================== -->
+
+            <LinearLayout
+                android:id="@+id/MifS50LinearPurceLabel"
+                android:layout_width="match_parent"
+                android:layout_height="78dp"
+                android:background="#A0334444"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/radioGroupIncDec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical">
+
+                    <RadioButton
+                        android:id="@+id/radioIncrease"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Increament" />
+
+                    <RadioButton
+                        android:id="@+id/radioDecrease"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Decreament" />
+                </RadioGroup>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/MifS50TextPurceLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="center_horizontal"
+                        android:textSize="12dp"
+                        android:text="Value(Dec)"/>
+
+                    <EditText
+                        android:id="@+id/editTextPurce"
+                        style="@style/edt_style_vertical_hdpi"
+                        android:layout_height="48dp"
+                        android:textSize="14dp"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:text="00">
+
+                    </EditText>
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <!-- =========================Increase/Decrease=============================================== -->
+            <!-- =========================Block============================================== -->
+
+            <LinearLayout
+                android:id="@+id/MifS50LinearBlockLabel"
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:layout_marginTop="10dp"
+                android:background="#A0334444"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/MifS50TextBlockLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="12dp"
+                    android:text="Block" />
+
+                <LinearLayout
+                    android:layout_width="72dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/MifS50TextBlockDataDecLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:gravity="center_horizontal"
+                        android:textSize="12dp"
+                        android:text="Data(Dec)" />
+
+                    <EditText
+                        android:id="@+id/MifS50EditTextBlockDataDec"
+                        style="@style/edt_style_vertical_hdpi"
+                        android:layout_height="48dp"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:textSize="14dp"
+                        android:text="00"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="174dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/MifS50TextBlockHexLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:gravity="center_horizontal"
+                        android:textSize="12dp"
+                        android:text="Data(Hex)" />
+
+                    <TextView
+                        android:id="@+id/MifS50TextBlockHex"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginRight="8dp"
+                        android:gravity="center_vertical"
+                        android:textSize="14dp"
+                        android:hint="000102030405060708090a0b0c0d0e" />
+                </LinearLayout>
+            </LinearLayout>
+            <!-- =========================Block============================================== -->
+            <!-- =========================Trailer============================================== -->
+
+            <LinearLayout
+                android:id="@+id/MifS50LinearTrailerLabel"
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:layout_marginTop="10dp"
+                android:background="#A0334444"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/MifS50TextTrailerLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="12dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="Trailer"/>
+
+                <LinearLayout
+                    android:layout_width="88dp"
+                    android:layout_height="72dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/MifS50TextBlock3KeyAHexLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:gravity="center_horizontal"
+                        android:textSize="12dp"
+                        android:text="Data(Hex)"/>
+
+                    <EditText
+                        android:id="@+id/MifS50EditTextBlock3KeyAHex"
+                        style="@style/edt_style_vertical_hdpi"
+                        android:layout_height="48dp"
+                        android:inputType="textMultiLine"
+                        android:maxLength="12"
+                        android:text="000000000000"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/MifS50TextBlock3DataDecLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:textSize="12dp"
+                        android:gravity="center_horizontal"
+                        android:text="Access" />
+
+                    <EditText
+                        android:id="@+id/MifS50EditTextBlock3DataMode"
+                        style="@style/edt_style_vertical_hdpi"
+                        android:layout_height="48dp"
+                        android:inputType="textMultiLine"
+                        android:maxLength="8"
+                        android:textSize="12dp"
+                        android:text="FF078069"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="88dp"
+                    android:layout_height="72dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/MifS50TextBlock3KeyBHexLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:textSize="12dp"
+                        android:gravity="center_horizontal"
+                        android:text="Data(Hex)"/>
+
+                    <EditText
+                        android:id="@+id/MifS50EditTextBlock3KeyBHex"
+                        style="@style/edt_style_vertical_hdpi"
+                        android:layout_height="48dp"
+                        android:inputType="textMultiLine"
+                        android:textSize="12dp"
+                        android:maxLength="12"
+                        android:text="FFFFFFFFFFFF"/>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- =========================Trailer=============================================== -->
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

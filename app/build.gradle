@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace 'com.alcorlink.smartcard'
+    lint {
+        abortOnError true
+    }
+}
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.alcorlink.smartcard"
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 31
+        versionName "1.5.7.00"
+        resValue "string", "app_version", "${versionName}"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            applicationVariants.all { variant ->
+                appendVersionName(variant, defaultConfig)
+            }
+        }
+    }
+}
+def appendVersionName(variant, defaultConfig) {
+    if (variant.buildType.name != "debug") {
+        variant.outputs.each { output ->
+            variant.packageApplicationProvider.get().outputDirectory = new File(project.rootDir.absolutePath + "/apk")
+            output.outputFileName = "SmartCardApp.apk"
+        }
+    }
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation files('libs/SmartCardLib.jar')
+}

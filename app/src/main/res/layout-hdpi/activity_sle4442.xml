@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    android:fitsSystemWindows="true">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tsle4442oolbar"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:background="@drawable/bg_tool_bar">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/title_style_hdpi"
+            android:layout_width="wrap_content"
+            android:text="@string/title_activity_sle4442_" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/sle4442openLayout"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_below="@+id/tsle4442oolbar"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/SLE4442buttonOpen"
+            style="@style/button_style_narrow_hdpi"
+            android:layout_marginLeft="18dp"
+            android:onClick="OnClickSLE4442Open"
+            android:text="@string/BtOpen" />
+
+
+        <Button
+            android:id="@+id/SLE4442buttonPower"
+            style="@style/button_style_narrow_hdpi"
+            android:onClick="OnClickSLE4442Power"
+            android:text="@string/BtPower" />
+
+        <Button
+            android:id="@+id/SLE4442buttonClose"
+            style="@style/button_style_narrow_hdpi"
+            android:onClick="OnClickSLE4442Close"
+            android:text="@string/BtClose"/>
+    </LinearLayout>
+
+
+
+    <ScrollView
+        android:id="@+id/tsle4442scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="272dp"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/sle4442openLayout"
+        android:fadeScrollbars="false"
+        android:fillViewport="true"
+        android:scrollbarThumbVertical="@drawable/scrollbar"
+        android:scrollbarSize="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <!-- =======================Verify==================================================================== -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:background="@drawable/bg_content1"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="108dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/SLE4442buttonVerify"
+                        style="@style/button_style_narrow_hdpi"
+                        android:layout_height="36dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="0dp"
+                        android:onClick="OnClickSLE4442Verify"
+                        android:text="@string/BtVerify"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/SLE4442TextPIN1"
+                        style="@style/text_style_vertical_hdpi"
+                        android:layout_marginTop="8dp"
+                        android:text="PIN1" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/SLE4442EditTextPIN1"
+                        style="@style/edt_style_vertical_hdpi"
+                        android:gravity="center_horizontal"
+                        android:inputType="textMultiLine"
+                        android:maxLength="2"
+                        android:text="FF" >
+                    </EditText>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/SLE4442TextPIN2"
+                        style="@style/text_style_vertical_hdpi"
+                        android:layout_marginTop="8dp"
+                        android:text="PIN2" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/SLE4442EditTextPIN2"
+                        style="@style/edt_style_vertical_hdpi"
+                        android:gravity="center_horizontal"
+                        android:inputType="textMultiLine"
+                        android:maxLength="2"
+                        android:text="FF" >
+                    </EditText>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/SLE4442TextPIN3"
+                        style="@style/text_style_vertical_hdpi"
+                        android:layout_marginTop="8dp"
+                        android:text="PIN3" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/SLE4442EditTextPIN3"
+                        style="@style/edt_style_vertical_hdpi"
+                        android:gravity="center_horizontal"
+                        android:inputType="textMultiLine"
+                        android:maxLength="2"
+                        android:text="FF" >
+                    </EditText>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- =======================Verify==================================================================== -->
+            <!-- =======================Main Memory==================================================================== -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="138dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_content1"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="108dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+
+                    <Button
+                        android:id="@+id/SLE4442buttonReadMM"
+                        style="@style/button_style_narrow_hdpi"
+                        android:layout_height="36dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="0dp"
+                        android:textSize="10dp"
+                        android:onClick="OnClickSLE4442ReadMainMemory"
+                        android:text="@string/BtReadMainMemory" >
+                    </Button>
+
+                    <Button
+                        android:id="@+id/SLE4442buttonUpdataMM"
+                        style="@style/button_style_narrow_hdpi"
+                        android:layout_height="36dp"
+                        android:layout_marginLeft="18dp"
+                        android:textSize="10dp"
+                        android:onClick="OnClickSLE4442UpdataMainMemory"
+                        android:text="@string/BtUpdateMainMemory" >
+                    </Button>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="88dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="24dp"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/SLE4442TextAddrMM"
+                            style="@style/text_style_vertical_hdpi"
+                            android:layout_marginTop="8dp"
+                            android:text="Address" >
+                        </TextView>
+
+                        <EditText
+                            android:id="@+id/SLE4442EditTextAddrMM"
+                            style="@style/edt_style_vertical_hdpi"
+                            android:gravity="center_horizontal"
+                            android:inputType="textMultiLine"
+                            android:maxLength="2"
+                            android:text="00" >
+                        </EditText>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/SLE4442TextLenMM"
+                            style="@style/text_style_vertical_hdpi"
+                            android:layout_marginTop="8dp"
+                            android:text="Length(Hex)" >
+                        </TextView>
+
+                        <EditText
+                            android:id="@+id/SLE4442EditTextLenMM"
+                            style="@style/edt_style_vertical_hdpi"
+                            android:gravity="center_horizontal"
+                            android:inputType="textMultiLine"
+                            android:maxLength="2"
+                            android:text="04" >
+                        </EditText>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/SLE4442TextDataMM"
+                            style="@style/text_style_vertical_hdpi"
+                            android:layout_marginTop="8dp"
+                            android:text="Data" >
+                        </TextView>
+
+                        <EditText
+                            android:id="@+id/SLE4442EditTextDataMM"
+                            style="@style/edt_style_vertical_hdpi"
+                            android:gravity="center_horizontal"
+                            android:inputType="textMultiLine"
+                            android:maxLength="2"
+                            android:text="01"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- =======================Main Memory==================================================================== -->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="112dp"
+                android:background="@drawable/bg_content1"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="108dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+
+                    <Button
+                        android:id="@+id/SLE4442buttonReadPM"
+                        style="@style/button_style_narrow_hdpi"
+                        android:layout_height="36dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="0dp"
+                        android:textSize="10dp"
+                        android:onClick="OnClickSLE4442ReadProtectionMemory"
+                        android:text="@string/BtReadProtectionMem" >
+                    </Button>
+                    <Button
+                        android:id="@+id/SLE4442buttonWritePM"
+                        style="@style/button_style_narrow_hdpi"
+                        android:layout_height="36dp"
+                        android:layout_marginLeft="18dp"
+                        android:textSize="10dp"
+                        android:onClick="OnClickSLE4442WriteProtectionMemory"
+                        android:text="@string/BtWriteProtectionMem" >
+                    </Button>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="88dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="24dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/SLE4442TextAddrPM"
+                            style="@style/text_style_vertical_hdpi"
+                            android:layout_marginTop="8dp"
+                            android:text="Address" >
+                        </TextView>
+
+                        <EditText
+                            android:id="@+id/SLE4442EditTextAddrPM"
+                            style="@style/edt_style_vertical_hdpi"
+                            android:gravity="center_horizontal"
+                            android:inputType="textMultiLine"
+                            android:maxLength="2"
+                            android:text="00" >
+                        </EditText>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/SLE4442TextDataPM"
+                            style="@style/text_style_vertical_hdpi"
+                            android:layout_marginTop="8dp"
+                            android:text="Data" >
+                        </TextView>
+
+                        <EditText
+                            android:id="@+id/SLE4442EditTextDataPM"
+                            style="@style/edt_style_vertical_hdpi"
+                            android:gravity="center_horizontal"
+                            android:inputType="textMultiLine"
+                            android:maxLength="2"
+                            android:text="01" >
+                        </EditText>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+            <!-- =======================Update Security Memory==================================================================== -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="142dp"
+                android:background="@drawable/bg_content1"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="108dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+                    <Button
+                        android:id="@+id/SLE4442buttonReadSM"
+                        style="@style/button_style_narrow_hdpi"
+                        android:layout_height="36dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="0dp"
+                        android:textSize="10dp"
+                        android:onClick="OnClickSLE4442ReadSecurityMemory"
+                        android:text="@string/BtReadSecurityMem" >
+                    </Button>
+
+                    <Button
+                        android:id="@+id/SLE4442buttonUpdataSM"
+                        style="@style/button_style_narrow_hdpi"
+                        android:layout_height="36dp"
+                        android:layout_marginLeft="18dp"
+                        android:textSize="10dp"
+                        android:onClick="OnClickSLE4442UpdataSecurityMemory"
+                        android:text="@string/BtUpdateSecurityMem" >
+                    </Button>
+
+                    <Button
+                        android:id="@+id/SLE4442buttonCompare"
+                        style="@style/button_style_narrow_hdpi"
+                        android:layout_height="36dp"
+                        android:layout_marginLeft="18dp"
+                        android:textSize="10dp"
+                        android:onClick="OnClickSLE4442ComparaeVerification"
+                        android:text="@string/BtCompareVerificationData" >
+                    </Button>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="88dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="24dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/SLE4442TextAddrSM"
+                            style="@style/text_style_vertical_hdpi"
+                            android:layout_marginTop="8dp"
+                            android:text="Address" >
+                        </TextView>
+
+                        <EditText
+                            android:id="@+id/SLE4442EditTextAddrSM"
+                            style="@style/edt_style_vertical_hdpi"
+                            android:gravity="center_horizontal"
+                            android:inputType="textMultiLine"
+                            android:maxLength="2"
+                            android:text="00" >
+                        </EditText>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/SLE4442TextDataSM"
+                            style="@style/text_style_vertical_hdpi"
+                            android:layout_marginTop="8dp"
+                            android:text="Data" >
+                        </TextView>
+
+                        <EditText
+                            android:id="@+id/SLE4442EditTextDataSM"
+                            style="@style/edt_style_vertical_hdpi"
+                            android:gravity="center_horizontal"
+                            android:inputType="textMultiLine"
+                            android:maxLength="2"
+                            android:text="01" >
+                        </EditText>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:layout_below="@+id/tsle4442scrollView"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/SLE4442TextResultLabel"
+            style="@style/text_style_vertical_hdpi"
+            android:layout_marginLeft="12dp"
+            android:gravity="left"
+            android:text="Result:" >
+        </TextView>
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:fadeScrollbars="false"
+            android:fillViewport="true"
+            android:scrollbarThumbVertical="@drawable/scrollbar"
+            android:scrollbarSize="6dp">
+
+            <LinearLayout
+                android:id="@+id/SLE4442LayoutResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/SLE4442TextResult"
+                    android:textSize="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" >
+                </TextView>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

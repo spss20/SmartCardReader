@@ -1,0 +1,96 @@
+<resources>
+
+    <string name="app_name">SmartCardApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_7816_">ISO7816_Activity</string>
+    <string name="title_activity_sle4428_">SLE4428_Activity</string>
+    <string name="title_activity_sle4442_">SLE4442_Activity</string>
+    <string name="title_activity_sle6636_">SLE6636_Activity</string>
+    <string name="title_activity_at88_sc102_">AT88SC102_Activity</string>
+    <string name="title_activity_at24_c_">AT24C_Activity</string>
+    <string name="title_activity_at88_sc1608_">AT88SC1608_Activity</string>
+    <string name="title_activity_at88_sc153_">AT88SC153_Activity</string>
+    <string name="title_activity_at45_d041_">AT45D041_Activity</string>
+    <string name="title_activity_mifare_s50">MifareS50Activity</string>
+
+    <string name="BtOpen">open</string>
+    <string name="BtConnect">connect</string>
+    <string name="BtPower">set power</string>
+    <string name="BtClose">close</string>
+    <string name="BtProtocol">get protocol</string>
+    <string name="BtGetATR">get atr</string>
+    <string name="BtSebAPDU">send APDU</string>
+    <string name="BtGetSN">get SN</string>
+    <string name="BtRead">read</string>
+    <string name="BtWrite">write</string>
+    <string name="BtMainPageRead">mainMem page read</string>
+    <string name="BtBuff1Read">buff1 read</string>
+    <string name="BtBuff2Read">buff2 read</string>
+    <string name="BtMainMemPageToBuf1Xfr">mainMem page \nto buf1 Xfr</string>
+    <string name="BtMainMemPageToBuf2Xfr">mainMem page \nto buf2 Xfr</string>
+    <string name="BtMainMemPageToBuf1Comp">mainMem page \nto buf1 Comp</string>
+    <string name="BtMainMemPageToBuf2Comp">mainMem page \nto buf2 Comp</string>
+    <string name="BtBuff1Write">buff1 write</string>
+    <string name="BtBuff2Write">buff2 write</string>
+    <string name="BtBuff1ToMemWithErase">buff1 to mem \nwith erase</string>
+    <string name="BtBuff2ToMemWithErase">buff2 to mem \nwith erase</string>
+    <string name="BtBuff1ToMemWithoutErase">buff1 to mem \nwithout erase</string>
+    <string name="BtBuff2ToMemWithoutErase">buff2 to mem \nwithout erase</string>
+    <string name="BtMemPageProgThroughBuff1">mem page Prog \nthrough buff1</string>
+    <string name="BtMemPageProgThroughBuff2">mem page Prog \nthrough buff2</string>
+    <string name="BtAutoPageReWriteThroughBuff1">auto page \nreWrite through \nbuff1</string>
+    <string name="BtAutoPageReWriteThroughBuff2">auto page \nreWrite through \nbuff2</string>
+    <string name="BtGetStatusRegister">get status \nregister</string>
+    <string name="BtSetFUSPinHigh">set FUS \npin high</string>
+    <string name="BtBtSetFUSPinLow">set FUS \npin low</string>
+    <string name="BtSetRSTPinHigh">set RST \npin high</string>
+    <string name="BtBtSetRSTPinLow">set RST \npin low</string>
+    <string name="BtBtReset">reset</string>
+    <string name="BtBitsRead">bits read</string>
+    <string name="BtBitsIncreaseAddr">bits increase addr</string>
+    <string name="BtBitsGotoAddr">bits goto \naddr</string>
+    <string name="BtBitsGetCurrentAddr">bits get \ncurrent addr</string>
+    <string name="BtSinglebitWrite">single bit \nwrite</string>
+    <string name="BtSingleBitErase">single bit \nerase</string>
+    <string name="BtByteIncreaseAddr">byte increase addr</string>
+    <string name="BtByteRead">byte read</string>
+    <string name="BtByteWrite">byte write</string>
+    <string name="BtByteCompare">byte compare</string>
+    <string name="BtSetUserZoneAddress">set user zone address</string>
+    <string name="BtWriteUserZone">"write user zone</string>
+    <string name="BtReadUserZone">read user zone</string>
+    <string name="BtWriteConfiZone">write config zone</string>
+    <string name="BtReadConfigZone">read config zone</string>
+    <string name="BtVerifyPassword">verify password</string>
+    <string name="BtGetID">get ID</string>
+    <string name="BtAuthentication">authenticate</string>
+    <string name="BtRead9Bits">read 9 bits</string>
+    <string name="BtRead8Bits">read 8 bits</string>
+    <string name="BtWriteErrorCounter">write error \ncounter</string>
+    <string name="BtVerify1stPSC">verify 1st PSC</string>
+    <string name="BtVerify2ndPSC">verify 2nd PSC</string>
+    <string name="BtVerifyPSCandEraseErrorCount">verify PSC \n and Erase \nerror count</string>
+    <string name="BtVerify">verify</string>
+    <string name="BtReadMainMemory">read main \n memory</string>
+    <string name="BtUpdateMainMemory">update main memory</string>
+    <string name="BtReadProtectionMem">read protection mem</string>
+    <string name="BtWriteProtectionMem">write protection mem</string>
+    <string name="BtReadSecurityMem">read security mem</string>
+    <string name="BtUpdateSecurityMem">update security mem</string>
+    <string name="BtCompareVerificationData">compare verification data</string>
+    <string name="BtWriteMem">write memory</string>
+    <string name="BtReadMem">read memory</string>
+    <string name="BtWriteCounter">write counter</string>
+    <string name="BtReadCounter">read counter</string>
+    <string name="BtReload">reload</string>
+    <string name="BtVerification">verification</string>
+
+    <string name="BtWriteAndEraseWithPB">write and erase \nwith PB</string>
+    <string name="BtWriteAndEraseWithoutPB">write and erase \nwithout PB</string>
+    <string name="BtWritePBwithDataCompare">write PB with \ndata compare</string>
+
+    <string name="BtWriteEeprom">write Eeprom</string>
+    <string name="BtReadEeprom">read Eeprom</string>
+
+
+</resources>

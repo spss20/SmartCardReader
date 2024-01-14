@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    android:orientation="vertical" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_tool_bar">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/title_style_xhdpi"
+            android:layout_width="wrap_content"
+            android:text="@string/title_activity_mifare_s50" />
+    </android.support.v7.widget.Toolbar>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/MifareS50buttonOpen"
+            style="@style/button_style_narrow_large"
+            android:layout_marginLeft="18dp"
+            android:onClick="OnClickMifareS50Open"
+            android:text="@string/BtOpen" />
+
+        <Button
+            android:id="@+id/MifareS50buttonPower"
+            style="@style/button_style_narrow_large"
+            android:onClick="OnClickMifareS50Connect"
+            android:text="@string/BtConnect" />
+
+        <Button
+            android:id="@+id/MifareS50buttonClose"
+            style="@style/button_style_narrow_large"
+            android:onClick="OnClickMifareS50Close"
+            android:text="@string/BtClose" >
+        </Button>
+
+        </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="588dp"
+        android:layout_marginTop="10dp"
+        android:fadeScrollbars="false"
+        android:fillViewport="true"
+        android:scrollbarSize="8dp"
+        android:scrollbarThumbVertical="@drawable/scrollbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ===============operation buttons================================================= -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="118dp"
+                android:background="@drawable/bg_content1"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/MifareGetID"
+                            style="@style/button_style_narrow_large"
+                            android:layout_marginLeft="18dp"
+                            android:onClick="OnClickMifareGetID"
+                            android:text="@string/BtGetID" >
+                        </Button>
+
+                        <Button
+                            android:id="@+id/MifareWrite"
+                            style="@style/button_style_narrow_large"
+                            android:onClick="OnClickMifareWrite"
+                            android:text="@string/BtWrite" >
+                        </Button>
+
+                        <Button
+                            android:id="@+id/MifareRead"
+                            style="@style/button_style_narrow_large"
+                            android:onClick="OnClickMifareRead"
+                            android:text="@string/BtRead" >
+                        </Button>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/MifareIncrementDecrement"
+                            style="@style/button_style_narrow_large"
+                            android:layout_marginLeft="18dp"
+                            android:onClick="OnClickMifareIncreDecre"
+                            android:text="+/-" >
+                        </Button>
+
+                        <Button
+                            android:id="@+id/MifareAuthenticate"
+                            style="@style/button_style_narrow_large"
+                            android:onClick="OnClickMifareAuthenticate"
+                            android:text="@string/BtAuthentication" >
+                        </Button>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- ===============operation buttons================================================= -->
+            <!-- ==================block operation============================================================== -->
+
+
+            <!-- ==================block info============================================================== -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textCurrentSector"
+                    style="@style/text_style_vertical_xhdpi"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:text="Current Sector:"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <!-- ==================block 0================================ -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="104dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/bg_content1"
+                android:orientation="vertical"
+                android:paddingRight="8dp">
+
+                <TextView
+                    android:id="@+id/textBlock0"
+                    style="@style/text_style_vertical_xhdpi"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:text="[Block0]"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="92dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textBlock0DataDecLabel"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:layout_marginTop="8dp"
+                            android:text="Value(Dec)"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/MifareTextBlock0DataDec"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:layout_marginTop="8dp"
+                            android:text="000"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="364dp"
+                        android:layout_height="68dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textBlock0DataHexLabel"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:layout_marginTop="8dp"
+                            android:text="Data(Hex)"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/textBlock0DataHex"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:layout_marginTop="8dp"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- ==================block 0================================ -->
+
+
+            <!-- ==================block 1================================ -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="104dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/bg_content1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textBlock1"
+                    style="@style/text_style_vertical_xhdpi"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:text="[Block1]"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="92dp"
+                        android:layout_height="68dp"
+                        android:layout_marginLeft="8dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textBlock1DataDecLabel"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:layout_marginTop="8dp"
+                            android:text="Value(Dec)"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/MifareTextBlock1DataDec"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:layout_marginTop="8dp"
+                            android:text="000"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="364dp"
+                        android:layout_height="68dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textBlock1DataHexLabel"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:layout_marginTop="8dp"
+                            android:text="Data(Hex)"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/textBlock1DataHex"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:layout_marginTop="8dp"
+
+                            android:textColor="#FFFFFF"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- ==================block 1================================ -->
+
+
+            <!-- ==================block 2================================ -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="104dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/bg_content1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textBlock2"
+                    style="@style/text_style_vertical_xhdpi"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:text="[Block2]"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="92dp"
+                        android:layout_height="68dp"
+                        android:layout_marginLeft="8dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textBlock2DataDecLabel"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:layout_marginTop="8dp"
+                            android:text="Value(Dec)"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/MifareTextBlock2DataDec"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:layout_marginTop="8dp"
+                            android:text="000"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="364dp"
+                        android:layout_height="68dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textBlock2DataHexLabel"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:layout_marginTop="8dp"
+                            android:text="Data(Hex)"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/textBlock2DataHex"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:layout_marginTop="8dp"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- ==================block 2================================ -->
+
+
+            <!-- ==================block 3================================ -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="104dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/bg_content1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textTrailer"
+                    style="@style/text_style_vertical_xhdpi"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:text="[Trailer]"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="190dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textBlock3KeyAHexLabel"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:layout_marginTop="8dp"
+                            android:text="Data(Hex)"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/textBlock3KeyAHex"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:layout_marginTop="8dp"
+                            android:hint=""
+                            android:textColor="#FFFFFF"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="112dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textBlock3DataDecLabel"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:layout_marginTop="8dp"
+                            android:text="Access"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/MifareEditTextBlock3DataAccessMode"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:layout_marginTop="8dp"
+                            android:text="FF078069"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="190dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textBlock3KeyBHexLabel"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:layout_marginTop="8dp"
+                            android:text="Data(Hex)"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/textBlock3KeyBHex"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:layout_marginTop="8dp"
+                            android:hint=""
+                            android:textColor="#FFFFFF"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- ==================block 3================================ -->
+
+
+            <!-- ==================block info============================================================== -->
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- ==================block operation============================================================== -->
+
+    <!-- ==================result============================================================== -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="188dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/MifareS50TextResultLabel"
+            style="@style/text_style_vertical_xhdpi"
+            android:layout_marginLeft="18dp"
+            android:gravity="left"
+            android:text="Result:" >
+        </TextView>
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="168dp"
+            android:fadeScrollbars="false"
+            android:scrollbarThumbVertical="@drawable/scrollbar"
+            android:scrollbarSize="8dp"
+            android:fillViewport="true" >
+
+            <LinearLayout
+                android:id="@+id/MifareS50LayoutResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/MifareS50TextResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:text="" >
+                </TextView>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>

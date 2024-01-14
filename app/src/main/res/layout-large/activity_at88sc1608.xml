@@ -1,0 +1,505 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    android:fitsSystemWindows="true" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/at88sc1608Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_tool_bar">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/title_style_xhdpi"
+            android:layout_width="wrap_content"
+            android:text="@string/title_activity_at88_sc1608_" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/at88sc1608OpenLayout"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_below="@+id/at88sc1608Toolbar"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/AT88SC1608buttonOpen"
+            style="@style/button_style_narrow_large"
+            android:layout_marginLeft="18dp"
+            android:onClick="OnClickAT88SC1608Open"
+            android:text="@string/BtOpen" />
+
+        <Button
+            android:id="@+id/AT88SC1608buttonPower"
+            style="@style/button_style_narrow_large"
+            android:onClick="OnClickAT88SC1608Power"
+            android:text="@string/BtPower" />
+
+        <Button
+            android:id="@+id/AT88SC1608buttonClose"
+            style="@style/button_style_narrow_large"
+            android:onClick="OnClickAT88SC1608Close"
+            android:text="@string/BtClose"/>
+    </LinearLayout>
+
+
+
+
+    <ScrollView
+        android:id="@+id/at88sc1608ScrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="568dp"
+        android:paddingTop="10dp"
+        android:fadeScrollbars="false"
+        android:fillViewport="true"
+        android:scrollbarThumbVertical="@drawable/scrollbar"
+        android:scrollbarSize="8dp"
+        android:orientation="vertical"
+        android:layout_below="@+id/at88sc1608OpenLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <!-- =======================scrow===================================================================== -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- =======================set user zone address======================= -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:background="@drawable/bg_content1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/AT88SC1608SetUserZoneAddr"
+                    style="@style/button_style_narrow_large"
+                    android:layout_width="118dp"
+                    android:layout_height="52dp"
+                    android:layout_marginLeft="18dp"
+                    android:onClick="OnClickAT88SC1608SetUserZoneAddr"
+                    android:text="@string/BtSetUserZoneAddress"/>
+
+                <LinearLayout
+                    android:layout_width="102dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/AT88SC1608TextAddrSet"
+                        style="@style/text_style_vertical_xhdpi"
+                        android:text="Zone(Dec)"/>
+
+                    <EditText
+                        android:id="@+id/AT88SC1608EditTextAddrSet"
+                        style="@style/edt_style_vertical_xhdpi"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center_horizontal"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:text="00"/>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- =======================set user zone address============================= -->
+            <!-- =======================read write user=========================================== -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="138dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_content1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/AT88SC1608WriteUser"
+                        style="@style/button_style_narrow_large"
+                        android:layout_width="118dp"
+                        android:layout_height="52dp"
+                        android:layout_marginLeft="18dp"
+                        android:onClick="OnClickAT88SC1608WriteUserZone"
+                        android:text="@string/BtWriteUserZone"/>
+
+                    <Button
+                        android:id="@+id/AT88SC1608ReadUser"
+                        style="@style/button_style_narrow_large"
+                        android:layout_width="118dp"
+                        android:layout_height="52dp"
+                        android:layout_marginLeft="18dp"
+                        android:onClick="OnClickAT88SC1608ReadUserZone"
+                        android:text="@string/BtReadUserZone"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="102dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="6dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/AT88SC1608TextAddrUser"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:text="Address(Hex)"/>
+
+                        <EditText
+                            android:id="@+id/AT88SC1608EditTextAddrUser"
+                            style="@style/edt_style_vertical_xhdpi"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center_horizontal"
+                            android:inputType="textMultiLine"
+                            android:maxLength="2"
+                            android:text="00"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="102dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="6dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/AT88SC1608TextUserLen"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:text="Data Len(Dec)"/>
+
+                        <EditText
+                            android:id="@+id/AT88SC1608EditTextUserLen"
+                            style="@style/edt_style_vertical_xhdpi"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center_horizontal"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:text="10"/>
+                    </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="138dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="6dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/AT88SC1608TextDataUser"
+                        style="@style/text_style_vertical_xhdpi"
+                        android:text="Data(Hex)"/>
+
+                    <EditText
+                        android:id="@+id/AT88SC1608EditTextDataUser"
+                        style="@style/edt_style_vertical_xhdpi"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center_horizontal"
+                        android:inputType="textMultiLine"
+                        android:maxLength="96"
+                        android:text="01020 0405"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- =======================read write user============================= -->
+            <!-- =======================read write config======================= -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="138dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_content1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/AT88SC1608WriteConfig"
+                        style="@style/button_style_narrow_large"
+                        android:layout_width="118dp"
+                        android:layout_height="52dp"
+                        android:layout_marginLeft="18dp"
+                        android:onClick="OnClickAT88SC1608WriteConfigZone"
+                        android:text="@string/BtWriteConfiZone"/>
+
+                    <Button
+                        android:id="@+id/AT88SC1608ReadConfig"
+                        style="@style/button_style_narrow_large"
+                        android:layout_width="118dp"
+                        android:layout_height="52dp"
+                        android:layout_marginLeft="18dp"
+                        android:onClick="OnClickAT88SC1608ReadConfigZone"
+                        android:text="@string/BtReadConfigZone"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="102dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="6dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/AT88SC1608TextAddrConfig"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:text="Address(Hex)"/>
+
+                        <EditText
+                            android:id="@+id/AT88SC1608EditTextAddrConfig"
+                            style="@style/edt_style_vertical_xhdpi"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center_horizontal"
+                            android:inputType="textMultiLine"
+                            android:maxLength="2"
+                            android:text="18"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="102dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="6dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/AT88SC1608TextLenConfig"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:text="Data Len(Dec)"/>
+
+                        <EditText
+                            android:id="@+id/AT88SC1608EditTextLenConfig"
+                            style="@style/edt_style_vertical_xhdpi"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center_horizontal"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:text="10"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="138dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="6dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/AT88SC1608TextDataConfig"
+                            style="@style/text_style_vertical_xhdpi"
+                            android:text="Data(Hex)"/>
+
+                        <EditText
+                            android:id="@+id/AT88SC1608EditTextDataConfig"
+                            style="@style/edt_style_vertical_xhdpi"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center_horizontal"
+                            android:inputType="textMultiLine"
+                            android:maxLength="96"
+                            android:text="0102030405"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- =======================read write config============================= -->
+
+
+            <!-- =======================Verify PW======================= -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="178dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_content1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/AT88SC1608VerifyPassWd"
+                    style="@style/button_style_narrow_large"
+                    android:layout_height="52dp"
+                    android:layout_marginLeft="18dp"
+                    android:onClick="OnClickAT88SC1608VerifyPassWd"
+                    android:text="@string/BtVerifyPassword"/>
+
+                <LinearLayout
+                    android:layout_width="128dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/AT88SC1608TextVpWR"
+                        style="@style/text_style_vertical_xhdpi"
+                        android:text="R/W"/>
+
+                    <RadioGroup
+                        android:id="@+id/radioPwGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="82dp"
+                        android:layout_marginLeft="18dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/radioWrite"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/radio_selector"
+                            android:checked="true"
+                            android:text="@string/BtWrite" />
+
+                        <RadioButton
+                            android:id="@+id/radioRead"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/radio_selector"
+                            android:text="@string/BtRead" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/AT88SC1608TextVpZone"
+                        style="@style/text_style_vertical_xhdpi"
+                        android:layout_marginTop="5dp"
+                        android:text="Zone"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="3dp">
+
+                        <Spinner
+                            android:id="@+id/AT88SC1608spinnerZone"
+                            style="@style/spinner_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:spinnerMode="dialog" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+
+                            android:layout_marginRight="6dp"
+                            android:src="@drawable/btn_drop_down_list" />
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <!-- =====Password============= -->
+
+                <LinearLayout
+                    android:layout_width="128dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/AT88SC1608TextPassWord"
+                        style="@style/text_style_vertical_xhdpi"
+                        android:text="PassWord(Hex)"/>
+
+                    <EditText
+                        android:id="@+id/AT88SC1608EditTextPw1"
+                        style="@style/edt_style_vertical_xhdpi"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center_horizontal"
+                        android:inputType="textMultiLine"
+                        android:maxLength="2"
+                        android:text="34"/>
+
+                    <EditText
+                        android:id="@+id/AT88SC1608EditTextPw2"
+                        style="@style/edt_style_vertical_xhdpi"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_horizontal"
+                        android:inputType="textMultiLine"
+                        android:maxLength="2"
+                        android:text="34"/>
+
+                    <EditText
+                        android:id="@+id/AT88SC1608EditTextPw3"
+                        style="@style/edt_style_vertical_xhdpi"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_horizontal"
+                        android:inputType="textMultiLine"
+                        android:maxLength="2"
+                        android:text="34"/>
+                </LinearLayout>
+                <!-- =====Password============= -->
+            </LinearLayout>
+
+            <!-- ========================Verify PW============================= -->
+        </LinearLayout>
+        <!-- =======================scrow===================================================================== -->
+    </ScrollView>
+
+
+    <!-- =======================result===================================================================== -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="182dp"
+        android:orientation="vertical"
+        android:layout_below="@+id/at88sc1608ScrollView1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/AT88SC1608TextResultLabel"
+            style="@style/text_style_vertical_xhdpi"
+            android:layout_marginLeft="18dp"
+            android:gravity="left"
+            android:text="Result:" >
+        </TextView>
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="148dp"
+            android:fadeScrollbars="false"
+            android:scrollbarThumbVertical="@drawable/scrollbar"
+            android:scrollbarSize="8dp"
+            android:fillViewport="true" >
+
+            <LinearLayout
+                android:id="@+id/AT88SC1608LayoutResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/AT88SC1608TextResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:text="" >
+                </TextView>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    <!-- =======================result===================================================================== -->
+
+</RelativeLayout>
